@@ -15,9 +15,14 @@
   
   - name: Delete content & directory
     ansible.builtin.file:
-      path: /usr/share/nginx/html/
+      path: /usr/share/nginx/html
       state: absent
-      
+  
+  - name: create html directory
+    ansible.builtin.file:
+      path: /usr/share/nginx/html
+      state: directory
+
   - name: download content
     ansible.builtin.get_url:
       url: https://roboshop-builds.s3.amazonaws.com/web.zip
@@ -27,7 +32,6 @@
     ansible.builtin.unarchive:
       src: /tmp/web.zip
       dest: /usr/share/nginx/html/
-      remote_src: yes
 
   - name: copy roboshop conf
     ansible.builtin.copy:
