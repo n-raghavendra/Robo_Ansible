@@ -21,7 +21,7 @@
   - name: download content
     ansible.builtin.get_url:
       url: https://roboshop-builds.s3.amazonaws.com/web.zip
-      dest: /tmp/web.zip
+      dest: /tmp/
 
   - name: unarchive content
     ansible.builtin.unarchive:
