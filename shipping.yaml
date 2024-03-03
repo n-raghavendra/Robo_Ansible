@@ -69,4 +69,3 @@
     ansible.builtin.service:
       name: shipping
       state: restarted
-      enabled: yes
