@@ -21,7 +21,7 @@
       state: directory
 
   - name: download payment
-    ansible.biulin.get_url:
+    ansible.builtin.get_url:
      url: https://roboshop-builds.s3.amazonaws.com/payment.zip
      dest: /tmp/payment.zip
 
