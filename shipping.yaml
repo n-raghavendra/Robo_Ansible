@@ -22,7 +22,6 @@
     ansible.builtin.get_url:
       url: https://roboshop-builds.s3.amazonaws.com/shipping.zip
       dest: /tmp/shipping.zip
-      remote_src: yes
 
   - name: urachive shipping
     ansible.builtin.unarchive:
