@@ -26,7 +26,7 @@
   - name: unarchive content
     ansible.builtin.unarchive:
       src: /tmp/web.zip
-      dest: /usr/share/nginx/html
+      dest: /usr/share/nginx/html/
 
   - name: copy roboshop conf
     ansible.builtin.copy:
