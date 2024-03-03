@@ -21,12 +21,13 @@
   - name: download shipping
     ansible.builtin.get_url:
       url: https://roboshop-builds.s3.amazonaws.com/shipping.zip
-      dest: /tmp/shipping.zip
+      dest: /tmp
 
   - name: urachive shipping
     ansible.builtin.unarchive:
       src: /tmp/shipping.zip
       dest: /app
+      remote_src: yes
 
   - name: mvn clean the package
     ansible.builtin.shell: mvn clean package
@@ -69,3 +70,4 @@
     ansible.builtin.service:
       name: shipping
       state: restarted
+      enabled: yes
