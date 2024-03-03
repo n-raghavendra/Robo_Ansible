@@ -35,9 +35,10 @@
       chdir: /app
 
   - name: copy system service
-    ansible.builtin.file:
+    ansible.builtin.copy:
       src: user.service
       dest: /etc/systemd/system/user.service
+      remote_src: yes
 
   - name: perform the reload
     ansible.builtin.systemd_service:
