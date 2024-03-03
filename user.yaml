@@ -14,11 +14,6 @@
     ansible.builtin.user:
       name: roboshop
 
-  - name: remove app folder
-    ansible.builtin.file:
-      path: /app
-      state: absent
-
   - name: create app folder
     ansible.builtin.file:
       path: /app
@@ -41,7 +36,7 @@
       chdir: /app
 
   - name: copy system service
-    anisble.builtin.file:
+    ansible.builtin.file:
       src: user.service
       dest: /etc/systemd/system/user.service
       remote_src: yes
