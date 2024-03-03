@@ -27,7 +27,7 @@
     ansible.builtin.unarchive:
       src: /tmp/shipping.zip
       dest: /app
-      remote_src: yes
+
 
   - name: mvn clean the package
     ansible.builtin.shell: mvn clean package
@@ -42,12 +42,6 @@
   - name: perform the reload
     ansible.builtin.systemd_service:
       daemon_reload: true
-
-  - name: start and enable shipping
-    ansible.builtin.service:
-      name: shipping
-      state: started
-      enabled: yes
 
   - name: install mysql
     ansible.builtin.package:
